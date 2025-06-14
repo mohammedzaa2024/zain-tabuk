@@ -1,280 +1,322 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="زين تبوك للشقق المفروشة: إقامة فاخرة في تبوك مع استوديوهات قياسية وفاخرة وشقق بغرفة أو غرفتي نوم، واي فاي مجاني، مواقف سيارات، وخدمات تنظيف يومية.">
-    <meta name="keywords" content="زين تبوك, شقق مفروشة تبوك, استوديو فخم, شقق عائلية, فنادق تبوك">
-    <title>زين تبوك للشقق المفروشة</title>
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Tajawal', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(90deg, #1a3c5a, #4a90e2);
-            color: white;
-            text-align: center;
-            padding: 3rem 1rem;
-            position: relative;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            font-weight: 700;
-        }
-        header p {
-            font-size: 1.2rem;
-            margin-top: 10px;
-        }
-        .container {
-            max-width: 1300px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .section {
-            background: white;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            padding: 30px;
-        }
-        .section h2 {
-            color: #1a3c5a;
-            border-bottom: 3px solid #4a90e2;
-            padding-bottom: 10px;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .rooms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-        .room-card {
-            background: #f9f9f9;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        }
-        .room-card:hover {
-            transform: translateY(-5px);
-        }
-        .room-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-        .room-card-content {
-            padding: 15px;
-            text-align: center;
-        }
-        .room-card h3 {
-            color: #4a90e2;
-            font-size: 1.5rem;
-            margin: 0 0 10px;
-        }
-        .room-card p {
-            margin: 5px 0;
-            font-size: 1rem;
-            color: #555;
-        }
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background 0.3s ease;
-            text-align: center;
-        }
-        .contact-btn {
-            background: #25D366;
-            color: white;
-        }
-        .contact-btn:hover {
-            background: #1ebe57;
-        }
-        .booking-btn {
-            background: #0071ce;
-            color: white;
-            margin-top: 10px;
-        }
-        .booking-btn:hover {
-            background: #005bb5;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .service-item {
-            text-align: center;
-            padding: 10px;
-        }
-        .service-item i {
-            font-size: 2rem;
-            color: #4a90e2;
-            margin-bottom: 10px;
-        }
-        .map iframe {
-            width: 100%;
-            height: 450px;
-            border: 0;
-            border-radius: 12px;
-        }
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-            .section {
-                padding: 20px;
-            }
-            .rooms-grid {
-                grid-template-columns: 1fr;
-            }
-            .map iframe {
-                height: 300px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="زين تبوك للشقق المفروشة تقدم إقامة فاخرة وعصرية في قلب تبوك بالقرب من جامعة الأمير فهد بن سلطان، مع واي فاي مجاني ومواقف سيارات.">
+  <meta name="keywords" content="شقق مفروشة, تبوك, إقامة فاخرة, زين تبوك, تأجير شقق">
+  <meta name="author" content="زين تبوك">
+  <title>زين تبوك للشقق المفروشة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7fafc;
+      color: #2d3748;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('banner.jpg') center/cover no-repeat;
+      min-height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      border-bottom: 8px solid #3182ce;
+      transition: background 0.3s ease;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .overlay-content {
+      background: white;
+      padding: 1.5rem;
+      max-width: 95%;
+      max-height: 90vh;
+      border-radius: 0.75rem;
+      overflow-y: auto;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    .gallery-grid img {
+      width: 160px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .large-view img {
+      max-width: 85vw;
+      max-height: 75vh;
+      object-fit: contain;
+      border-radius: 0.75rem;
+      transition: opacity 0.3s ease;
+    }
+
+    .nav-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2.5rem;
+      color: white;
+      background-color: rgba(0,0,0,0.5);
+      border-radius: 50%;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-arrow:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    .nav-arrow.left {
+      left: 1.5rem;
+    }
+
+    .nav-arrow.right {
+      right: 1.5rem;
+    }
+
+    .close-btn {
+      float: left;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #e53e3e;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      color: #c53030;
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid img {
+        width: 120px;
+        height: 90px;
+      }
+      .nav-arrow {
+        font-size: 1.75rem;
+        padding: 0.25rem 0.75rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>زين تبوك للشقق المفروشة</h1>
-        <p>إقامة مريحة وعصرية في قلب تبوك مع خدمات متكاملة وإطلالة على المدينة</p>
-    </header>
-
-    <div class="container">
-        <div class="section">
-            <h2>عن زين تبوك</h2>
-            <p>زين تبوك للشقق المفروشة تقدم تجربة إقامة فاخرة في مدينة تبوك، قريبة من معالم مثل جامعة الأمير فهد بن سلطان ومول زامز. تتميز شققنا بتصميم عصري، مرافق حديثة، وخدمة ذاتية تشمل واي فاي مجاني ومواقف سيارات آمنة.</p>
-        </div>
-
-        <div class="section">
-            <h2>الغرف والشقق المتوفرة</h2>
-            <div class="rooms-grid">
-                <div class="room-card">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/560268808.jpg?k=83c1429ada0b0ea583b5b12983adb88c5450ab09f38674d7e9086c833889b6a8&o=" alt="استوديو قياسي">
-                    <div class="room-card-content">
-                        <h3>استوديو قياسي</h3>
-                        <p><strong>المساحة:</strong> 28 متر مربع</p>
-                        <p><strong>الأسرة:</strong> 1 سرير مزدوج كبير جدًا</p>
-                        <p><strong>المرافق:</strong> تكييف، حمام خاص، تلفزيون بشاشة مسطحة، ثلاجة، ميكروويف، موقد، غلاية، منطقة جلوس، واي فاي مجاني، عازل صوت</p>
-                        <p><strong>السعر:</strong> يبدأ من 149 ريال/ليلة</p>
-                        <a href="https://www.booking.com/hotel/sa/zyn-tbwk.ar.html" class="btn booking-btn" target="_blank">احجز الآن</a>
-                    </div>
-                </div>
-                <div class="room-card">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/560268816.jpg?k=271f6baa423a0d109e064999bb18111b915f6388d0c635bf8acfe154edbc6150&o=" alt="استوديو فخم">
-                    <div class="room-card-content">
-                        <h3>استوديو فخم</h3>
-                        <p><strong>المساحة:</strong> 30 متر مربع</p>
-                        <p><strong>الأسرة:</strong> 1 سرير مزدوج كبير جدًا</p>
-                        <p><strong>المرافق:</strong> تكييف، حمام خاص، تلفزيون بشاشة مسطحة، ثلاجة، ميكروويف، موقد، غلاية، منطقة جلوس، واي فاي مجاني، عازل صوت</p>
-                        <p><strong>السعر:</strong> تحقق من الأسعار عبر Booking.com</p>
-                        <a href="https://www.booking.com/hotel/sa/zyn-tbwk.ar.html" class="btn booking-btn" target="_blank">احجز الآن</a>
-                    </div>
-                </div>
-                <div class="room-card">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/659190668.jpg?k=2a2f61340440688816c99bb666e41f73cb31765165d9b032245f4981bfe6ddd9&o=" alt="استوديو">
-                    <div class="room-card-content">
-                        <h3>استوديو</h3>
-                        <p><strong>المساحة:</strong> غير محددة (مشابه للاستوديو القياسي)</p>
-                        <p><strong>الأسرة:</strong> 1 سرير مزدوج</p>
-                        <p><strong>المرافق:</strong> تكييف، حمام خاص، تلفزيون بشاشة مسطحة، ثلاجة، ميكروويف، موقد، غلاية، منطقة جلوس، واي فاي مجاني</p>
-                        <p><strong>السعر:</strong> يبدأ من 176 ريال/ليلة</p>
-                        <a href="https://www.booking.com/hotel/sa/zyn-tbwk.ar.html" class="btn booking-btn" target="_blank">احجز الآن</a>
-                    </div>
-                </div>
-                <div class="room-card">
-                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/560268808.jpg?k=83c1429ada0b0ea583b5b12983adb88c5450ab09f38674d7e9086c833889b6a8&o=" alt="شقة بغرفة نوم واحدة">
-                    <div class="room-card-content">
-                        <h3>شقة بغرفة نوم واحدة</h3>
-                        <p><strong>المساحة:</strong> أكبر من الاستوديو</p>
-                        <p><strong>الأسرة:</strong> 1 سرير مزدوج + أريكة</p>
-                        <p><strong>المرافق:</strong> مطبخ مجهز، تكييف، حمام خاص، تلفزيون بشاشة مسطحة، منطقة جلوس، واي فاي مجاني، إطلالة على المدينة</p>
-                        <p><strong>السعر:</strong> تحقق من الأسعار عبر Booking.com</p>
-                        <a href="https://www.booking.com/hotel/sa/zyn-tbwk.ar.html" class="btn booking-btn" target="_blank">احجز الآن</a>
-                    </div>
-                </div>
-                <div class="room-card">
-                    <img src="https://images.unsplash.com/photo-1578683014728-c73599315515?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="شقة بغرفتي نوم">
-                    <div class="room-card-content">
-                        <h3>شقة بغرفتي نوم</h3>
-                        <p><strong>المساحة:</strong> واسعة للعائلات</p>
-                        <p><strong>الأسرة:</strong> سريرين مزدوجين + أريكة</p>
-                        <p><strong>المرافق:</strong> مطبخ مجهز، تكييف، حمام خاص، تلفزيون بشاشة مسطحة، منطقة جلوس، واي فاي مجاني، إطلالة على المدينة</p>
-                        <p><strong>السعر:</strong> تحقق من الأسعار عبر Booking.com</p>
-                        <a href="https://www.booking.com/hotel/sa/zyn-tbwk.ar.html" class="btn booking-btn" target="_blank">احجز الآن</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>الخدمات المتوفرة</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <i class="fas fa-wifi"></i>
-                    <p>واي فاي مجاني</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-parking"></i>
-                    <p>مواقف سيارات مجانية</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-coffee"></i>
-                    <p>كافيه في الموقع</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-broom"></i>
-                    <p>خدمة تنظيف يومية</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-elevator"></i>
-                    <p>مصعد</p>
-                </div>
-                <div class="service-item">
-                    <i class="fas fa-users"></i>
-                    <p>غرف عائلية</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="section">
-            <h2>معلومات الاستقبال</h2>
-            <p><strong>تسجيل الوصول:</strong> من 14:00 إلى 18:00</p>
-            <p><strong>تسجيل المغادرة:</strong> حتى 13:00</p>
-            <p><strong>الدفع:</strong> نقدًا فقط</p>
-            <p><strong>الحيوانات الأليفة:</strong> مسموح عند الطلب، بدون رسوم</p>
-            <p><strong>سياسة الأطفال:</strong> يُرحب بالأطفال من جميع الأعمار</p>
-            <p><strong>متطلبات العمر:</strong> لا يوجد حد أدنى للعمر</p>
-            <p><strong>سياسة التدخين:</strong> ممنوع التدخين</p>
-            <p><strong>الهدوء:</strong> من 23:00 إلى 11:00</p>
-        </div>
-
-        <div class="section">
-            <h2>الموقع</h2>
-            <p>منطقة قدسية، شارع الخطيب، تبوك 47312</p>
-            <div class="map">
-                <iframe src="https://maps.app.goo.gl/t2FbYrkyq9ZArTfi6" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-
-        <div class="section" style="text-align: center;">
-            <a href="https://wa.me/+966123456789" class="btn contact-btn" target="_blank">تواصل معنا عبر واتساب</a>
-            <a href="https://www.booking.com/hotel/sa/zyn-tbwk.ar.html" class="btn booking-btn" target="_blank">احجز الآن عبر Booking.com</a>
-        </div>
+  <header class="relative">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl md:text-5xl font-bold mb-2 animate-fade-in">زين تبوك للشقق المفروشة</h1>
+      <p class="text-lg md:text-xl animate-fade-in delay-200">إقامة مريحة وعصرية في قلب تبوك</p>
     </div>
+  </header>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold text-blue-600 mb-4">عن زين تبوك</h2>
+      <p class="text-gray-700 leading-relaxed">
+        تجربة إقامة فاخرة بالقرب من جامعة الأمير فهد بن سلطان، بتصميم عصري وخدمة متكاملة تشمل واي فاي مجاني ومواقف سيارات.
+      </p>
+    </section>
+
+    <section>
+      <table class="w-full bg-white shadow-lg rounded-lg overflow-hidden">
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th class="py-3 px-4 text-center">الوحدات السكنية<br><small>Residential Units</small></th>
+            <th class="py-3 px-4 text-center">التفاصيل<br><small>Details</small></th>
+            <th class="py-3 px-4 text-center">السعر<br><small>Price</small></th>
+            <th class="py-3 px-4 text-center">الصور<br><small>Photos</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="py-3 px-4 text-center">غرفة استوديو متوسطة<br>Studio Room Medium</td>
+            <td class="py-3 px-4 text-center">م²29 غرفة نوم وحمام<br>M2(29) Bedroom and bathroom</td>
+            <td class="py-3 px-4 text-center">١٧٠ ريال<br>170 SAR</td>
+            <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('studio-small')">اضغط هنا</a></td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="py-3 px-4 text-center">غرفة استوديو كبيرة<br>Studio Room Large</td>
+            <td class="py-3 px-4 text-center">م²35 غرفة نوم وحمام<br>M2(35) Bedroom and bathroom</td>
+            <td class="py-3 px-4 text-center">١٨٠ ريال<br>180 SAR</td>
+            <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('studio-large')">اضغط هنا</a></td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="py-3 px-4 text-center">شقة غرفة نوم<br>Bedroom Apartment</td>
+            <td class="py-3 px-4 text-center">غرفة نوم، ممر، مطبخ صغير وحمام<br>Bedroom, corridor, small kitchen and bathroom</td>
+            <td class="py-3 px-4 text-center">١٨٥ ريال<br>185 SAR</td>
+            <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('one-bedroom')">اضغط هنا</a></td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="py-3 px-4 text-center">شقة غرفة وصالة<br>Bedroom & Hall Apartment</td>
+            <td class="py-3 px-4 text-center">غرفة نوم، صالة، مطبخ صغير وحمام<br>Bedroom, hall, small kitchen and bathroom</td>
+            <td class="py-3 px-4 text-center">٢٢٥ ريال<br>225 SAR</td>
+            <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('one-bedroom-living')">اضغط هنا</a></td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="py-3 px-4 text-center">شقة غرفتين وصالة<br>Two-Bedroom & Hall Apartment</td>
+            <td class="py-3 px-4 text-center">غرفتين نوم، صالة، مطبخ و2 حمام<br>2 bedrooms, hall, kitchen and 2 bathrooms</td>
+            <td class="py-3 px-4 text-center">٤١٠ ريال<br>410 SAR</td>
+            <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('two-bedroom-living')">اضغط هنا</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <div class="overlay" id="overlay" role="dialog" aria-label="معرض الصور" onclick="closeOverlay(event)">
+    <div class="overlay-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeOverlay()" role="button" aria-label="إغلاق المعرض">×</span>
+      <div class="gallery-grid flex flex-wrap gap-3 justify-center" id="overlay-gallery"></div>
+      <div class="large-view flex items-center justify-center mt-4" id="largeView">
+        <span class="nav-arrow left" onclick="prevImage()" role="button" aria-label="الصورة السابقة">❮</span>
+        <img id="largeImage" src="" alt="صورة كبيرة" loading="lazy">
+        <span class="nav-arrow right" onclick="nextImage()" role="button" aria-label="الصورة التالية">❯</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">موقعنا على الخريطة</h2>
+      <div class="max-w-5xl mx-auto">
+        <a href="https://www.google.com/maps?q=28.434442397564442,36.518331246825895" target="_blank" aria-label="عرض موقع زين تبوك على خرائط جوجل">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3477.5711463373877!2d36.518331246825895!3d28.434442397564442!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDI2JzAzLjIiTiAzNsKwMzEnMDYuNyJF!5e0!3m2!1sar!2ssa!4v1718363212345!5m2!1sar!2ssa" 
+            width="100%" 
+            height="400" 
+            class="rounded-lg shadow-lg" 
+            style="border:0;" 
+            allowfullscreen 
+            loading="lazy">
+          </iframe>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const galleries = {
+      "studio-small": ["images/studio-small1.jpg", "images/studio-small2.jpg", "images/studio-small3.jpg"],
+      "studio-large": ["images/studio-large1.jpg", "images/studio-large2.jpg", "images/studio-large3.jpg"],
+      "one-bedroom": ["images/one-bedroom1.jpg", "images/one-bedroom2.jpg", "images/one-bedroom3.jpg"],
+      "one-bedroom-living": ["images/one-living1.jpg", "images/one-living2.jpg", "images/one-living3.jpg"],
+      "two-bedroom-living": ["images/two-living1.jpg", "images/two-living2.jpg", "images/two-living3.jpg", "images/two-living4.jpg"]
+    };
+
+    let currentGallery = [];
+    let currentIndex = 0;
+
+    function showGallery(id) {
+      const gallery = document.getElementById('overlay-gallery');
+      const largeView = document.getElementById('largeView');
+      const largeImage = document.getElementById('largeImage');
+      gallery.innerHTML = '';
+      largeView.style.display = 'none';
+
+      currentGallery = galleries[id];
+      currentIndex = 0;
+
+      currentGallery.forEach((src, index) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = `صورة ${index + 1} لـ ${id}`;
+        img.loading = 'lazy';
+        img.onclick = () => {
+          currentIndex = index;
+          showLargeImage();
+        };
+        gallery.appendChild(img);
+      });
+
+      document.getElementById('overlay').style.display = 'flex';
+      document.getElementById('overlay').focus();
+    }
+
+    function showLargeImage() {
+      const largeImage = document.getElementById('largeImage');
+      largeImage.src = currentGallery[currentIndex];
+      largeImage.alt = `صورة ${currentIndex + 1} للمعرض`;
+      document.getElementById('largeView').style.display = 'flex';
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % currentGallery.length;
+      showLargeImage();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
+      showLargeImage();
+    }
+
+    function closeOverlay(event) {
+      if (event && event.target.id !== 'overlay') return;
+      document.getElementById('overlay').style.display = 'none';
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (document.getElementById('overlay').style.display === 'flex') {
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+        if (e.key === 'Escape') closeOverlay();
+      }
+    });
+
+    // Touch support for gallery
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.getElementById('largeView').addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.getElementById('largeView').addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchEndX < touchStartX - 50) nextImage();
+      if (touchEndX > touchStartX + 50) prevImage();
+    });
+  </script>
+
+  <style>
+    /* Custom animations */
+    .animate-fade-in {
+      animation: fadeIn 1s ease-in-out;
+    }
+    .delay-200 {
+      animation-delay: 0.2s;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </body>
 </html>
