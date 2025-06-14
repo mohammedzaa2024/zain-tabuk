@@ -18,18 +18,33 @@
       color: #2d3748;
     }
 
-    header {
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.5)), url('banner.jpg') center/cover no-repeat;
-      min-height: 400px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      text-align: center;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
-      border-bottom: 8px solid #3182ce;
-      transition: background 0.3s ease;
-    }
+header {
+  background: linear-gradient(to bottom right, rgba(0,0,0,0.6), rgba(0,0,0,0.3)), 
+              url('images/zain-tabuk.jpg') center center no-repeat;
+  background-size: contain; /* تم التعديل من cover إلى contain */
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  border-bottom: 6px solid #4299e1;
+  position: relative;
+  isolation: isolate;
+}
+
+
+header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  z-index: -1;
+}
+
 
     .overlay {
       display: none;
@@ -129,18 +144,21 @@
   </style>
 </head>
 <body>
-  <header class="relative">
-    <div class="container mx-auto px-4">
-      <h1 class="text-4xl md:text-5xl font-bold mb-2 animate-fade-in">زين تبوك للشقق المفروشة</h1>
-      <p class="text-lg md:text-xl animate-fade-in delay-200">إقامة مريحة وعصرية في قلب تبوك</p>
-    </div>
-  </header>
+<header class="relative">
+  <div class="container mx-auto px-4 py-16">
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 animate-fade-in">زين تبوك للشقق المفروشة</h1>
+    <p class="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto animate-fade-in delay-200">
+      تجربة إقامة فاخرة بالقرب من جامعة الأمير فهد بن سلطان، بتصميم عصري وخدمة متكاملة تشمل واي فاي مجاني ومواقف سيارات.
+    </p>
+  </div>
+</header>	
 
   <main class="container mx-auto px-4 py-8">
     <section class="mb-12">
       <h2 class="text-3xl font-bold text-blue-600 mb-4">عن زين تبوك</h2>
       <p class="text-gray-700 leading-relaxed">
-        تجربة إقامة فاخرة بالقرب من جامعة الأمير فهد بن سلطان، بتصميم عصري وخدمة متكاملة تشمل واي فاي مجاني ومواقف سيارات.
+        زين تبوك شقق مخدومة  وحدات سكنية متنوعة باسعار منافسة ، تقع في حي القادسية بالقرب من مراكز التسوق والبوليفارد وبالقرب من الجامعة والمستشفى المركزي .
+يوجد مواقف خاصة ونوفر العديد من الخدمات المجانية لضيوفنا . حجز فوري ومؤكد 
       </p>
     </section>
 
@@ -157,31 +175,31 @@
         <tbody>
           <tr class="hover:bg-gray-50">
             <td class="py-3 px-4 text-center">غرفة استوديو متوسطة<br>Studio Room Medium</td>
-            <td class="py-3 px-4 text-center">م²29 غرفة نوم وحمام<br>M2(29) Bedroom and bathroom</td>
+            <td class="py-3 px-4 text-center">غرفة نوم و حمام  (29) م2<br>M2(29) Bedroom and bathroom</td>
             <td class="py-3 px-4 text-center">١٧٠ ريال<br>170 SAR</td>
             <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('studio-small')">اضغط هنا</a></td>
           </tr>
           <tr class="hover:bg-gray-50">
             <td class="py-3 px-4 text-center">غرفة استوديو كبيرة<br>Studio Room Large</td>
-            <td class="py-3 px-4 text-center">م²35 غرفة نوم وحمام<br>M2(35) Bedroom and bathroom</td>
+            <td class="py-3 px-4 text-center">غرفة نوم و حمام  (35) م2<br>M2(35) Bedroom and bathroom</td>
             <td class="py-3 px-4 text-center">١٨٠ ريال<br>180 SAR</td>
             <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('studio-large')">اضغط هنا</a></td>
           </tr>
           <tr class="hover:bg-gray-50">
             <td class="py-3 px-4 text-center">شقة غرفة نوم<br>Bedroom Apartment</td>
-            <td class="py-3 px-4 text-center">غرفة نوم، ممر، مطبخ صغير وحمام<br>Bedroom, corridor, small kitchen and bathroom</td>
+            <td class="py-3 px-4 text-center">غرفة نوم  وموزع وحمام ومطبخ صغير<br>Bedroom, corridor, small kitchen and bathroom</td>
             <td class="py-3 px-4 text-center">١٨٥ ريال<br>185 SAR</td>
             <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('one-bedroom')">اضغط هنا</a></td>
           </tr>
           <tr class="hover:bg-gray-50">
-            <td class="py-3 px-4 text-center">شقة غرفة وصالة<br>Bedroom & Hall Apartment</td>
-            <td class="py-3 px-4 text-center">غرفة نوم، صالة، مطبخ صغير وحمام<br>Bedroom, hall, small kitchen and bathroom</td>
+            <td class="py-3 px-4 text-center">شقة غرفةنوم وصالة<br>Bedroom & Hall Apartment</td>
+            <td class="py-3 px-4 text-center">غرفة نوم وصالة وحمام ومطبخ صغير<br>Bedroom, hall, small kitchen and bathroom</td>
             <td class="py-3 px-4 text-center">٢٢٥ ريال<br>225 SAR</td>
             <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('one-bedroom-living')">اضغط هنا</a></td>
           </tr>
           <tr class="hover:bg-gray-50">
-            <td class="py-3 px-4 text-center">شقة غرفتين وصالة<br>Two-Bedroom & Hall Apartment</td>
-            <td class="py-3 px-4 text-center">غرفتين نوم، صالة، مطبخ و2 حمام<br>2 bedrooms, hall, kitchen and 2 bathrooms</td>
+            <td class="py-3 px-4 text-center">شقة غرفتين نوم وصالة<br>Two-Bedroom & Hall Apartment</td>
+            <td class="py-3 px-4 text-center">غرفتين نوم وصالة وحمامين ومطبخ صغير<br>2 bedrooms, hall, kitchen and 2 bathrooms</td>
             <td class="py-3 px-4 text-center">٤١٠ ريال<br>410 SAR</td>
             <td class="py-3 px-4 text-center"><a class="text-blue-600 hover:underline font-semibold cursor-pointer" onclick="showGallery('two-bedroom-living')">اضغط هنا</a></td>
           </tr>
@@ -223,10 +241,10 @@
 
   <script>
     const galleries = {
-      "studio-small": ["images/studio-small1.jpg", "images/studio-small2.jpg", "images/studio-small3.jpg"],
-      "studio-large": ["images/studio-large1.jpg", "images/studio-large2.jpg", "images/studio-large3.jpg"],
-      "one-bedroom": ["images/one-bedroom1.jpg", "images/one-bedroom2.jpg", "images/one-bedroom3.jpg", "images/one-bedroom4.jpg"],
-      "one-bedroom-living": ["images/one-living1.jpg", "images/one-living2.jpg", "images/one-living3.jpg"],
+      "studio-small": ["images/studio-small1.jpg", "images/studio-small2.jpg", "images/studio-small3.jpg", "images/studio-small4.jpg"],
+      "studio-large": ["images/studio-large1.jpg", "images/studio-large2.jpg", "images/studio-large3.jpg", "images/studio-large4.jpg"],
+      "one-bedroom": ["images/one-bedroom1.jpg", "images/one-bedroom2.jpg", "images/one-bedroom3.jpg"],
+      "one-bedroom-living": ["images/one-living1.jpg", "images/one-living2.jpg", "images/one-living3.jpg", "images/one-living4.jpg"],
       "two-bedroom-living": ["images/two-living1.jpg", "images/two-living2.jpg", "images/two-living3.jpg", "images/two-living4.jpg", "images/two-living5.jpg", "images/two-living6.jpg"]
     };
 
