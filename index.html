@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
+  <!-- بيانات وصفية للصفحة -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="زين تبوك شقق مخدومة وحدات سكنية متنوعة بأسعار منافسة، تقع في حي القادسية بالقرب من مراكز التسوق والبوليفارد وبالقرب من الجامعة والمستشفى المركزي. يوجد مواقف خاصة ونوفر العديد من الخدمات المجانية لضيوفنا. حجز فوري ومؤكد">
   <meta name="keywords" content="شقق مخدومة, تبوك, إقامة فاخرة, زين تبوك, تأجير شقق">
   <meta name="author" content="زين تبوك">
   <title>زين تبوك للشقق المخدومة</title>
+
+  <!-- ربط ملفات جوجل فونت وتيلوند -->
   <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- أنماط CSS مخصصة -->
   <style>
+    /* أنماط أساسية للجسم */
     body {
       font-family: 'Almarai', sans-serif;
       margin: 0;
@@ -18,6 +24,7 @@
       color: #1e293b;
       line-height: 1.7;
     }
+    /* أنماط للرأس مع صورة خلفية */
     header {
       background: linear-gradient(to bottom, rgba(0,0,0,0.65), rgba(0,0,0,0.3)), url('images/zain-tabuk.jpg') center center no-repeat;
       background-size: contain;
@@ -33,6 +40,7 @@
       position: relative;
       isolation: isolate;
     }
+    /* طبقة تغطية لمعرض الصور */
     header::after {
       content: "";
       position: absolute;
@@ -40,6 +48,7 @@
       background: linear-gradient(to top, rgba(0,0,0,0.75), rgba(0,0,0,0.1));
       z-index: -1;
     }
+    /* أنماط لطبقة تغطية معرض الصور */
     .overlay {
       display: none;
       position: fixed;
@@ -54,6 +63,7 @@
       flex-direction: column;
       padding: 1.5rem;
     }
+    /* أنماط لمحتوى المعرض داخل الطبقة التغطية */
     .overlay-content {
       background: #ffffff;
       padding: 2.5rem;
@@ -64,6 +74,7 @@
       box-shadow: 0 12px 32px rgba(0,0,0,0.3);
       position: relative;
     }
+    /* أنماط لصور المعرض */
     .gallery-grid img {
       width: 220px;
       height: 160px;
@@ -73,11 +84,13 @@
       transition: transform 0.5s ease, box-shadow 0.5s ease;
       border: 2px solid #e5e7eb;
     }
+    /* تأثير تمرير الماوس على صور المعرض */
     .gallery-grid img:hover {
       transform: scale(1.08);
       box-shadow: 0 8px 20px rgba(0,0,0,0.35);
       border-color: #1e40af;
     }
+    /* أنماط لعرض الصورة الكبيرة */
     .large-view img {
       max-width: 85vw;
       max-height: 75vh;
@@ -86,6 +99,7 @@
       transition: opacity 0.5s ease, transform 0.5s ease;
       border: 3px solid #1e40af;
     }
+    /* أنماط لأزرار التنقل */
     .nav-arrow {
       position: absolute;
       top: 50%;
@@ -98,16 +112,19 @@
       cursor: pointer;
       transition: background-color 0.4s ease, transform 0.4s ease;
     }
+    /* تأثير تمرير الماوس على أزرار التنقل */
     .nav-arrow:hover {
       background-color: rgba(0,0,0,0.95);
       transform: translateY(-50%) scale(1.1);
     }
+    /* تحديد موضع السهم الأيسر والأيمن */
     .nav-arrow.left {
       left: 2.5rem;
     }
     .nav-arrow.right {
       right: 2.5rem;
     }
+    /* أنماط لزر الإغلاق */
     .close-btn {
       position: absolute;
       top: 1rem;
@@ -118,22 +135,27 @@
       font-weight: bold;
       transition: color 0.3s ease, transform 0.3s ease;
     }
+    /* تأثير تمرير الماوس على زر الإغلاق */
     .close-btn:hover {
       color: #b91c1c;
       transform: scale(1.2);
     }
+    /* تأثير الرسوم المتحركة للانزلاق */
     .animate-slide-in {
       animation: slideIn 1s ease-out;
     }
+    /* إطار الرسوم المتحركة للانزلاق */
     @keyframes slideIn {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    /* أنماط لحاوية الجدول */
     .table-container {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
       margin-bottom: 2rem;
     }
+    /* أنماط للجدول */
     table {
       border-collapse: separate;
       border-spacing: 0;
@@ -142,11 +164,13 @@
       background: white;
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
+    /* أنماط لخلايا الجدول (th و td) */
     th, td {
       border: 1px solid #e2e8f0;
       padding: 1.5rem;
       text-align: center;
     }
+    /* أنماط لخلايا رأس الجدول (th) */
     th {
       background: linear-gradient(to bottom, #1e40af, #1e3a8a);
       color: white;
@@ -154,6 +178,7 @@
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
+    /* تأثير تمرير الماوس على صفوف الجدول */
     tr {
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
@@ -161,15 +186,18 @@
       background-color: #f1f5f9;
       transform: translateY(-2px);
     }
+    /* أنماط لروابط التذييل */
     footer a {
       transform: translateY(0);
       transition: transform 0.4s ease, background-color 0.4s ease, box-shadow 0.4s ease;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
+    /* تأثير تمرير الماوس على روابط التذييل */
     footer a:hover {
       transform: translateY(-5px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
+    /* أنماط لزر الحث على اتخاذ إجراء */
     .cta-button {
       background: linear-gradient(to right, #1e40af, #3b82f6);
       color: white;
@@ -178,10 +206,12 @@
       font-weight: 600;
       transition: background 0.4s ease, transform 0.4s ease;
     }
+    /* تأثير تمرير الماوس على زر الحث على اتخاذ إجراء */
     .cta-button:hover {
       background: linear-gradient(to right, #1e3a8a, #2563eb);
       transform: scale(1.05);
     }
+    /* استعلام وسائط للشاشات بعرض أقصى 1024 بكسل */
     @media (max-width: 1024px) {
       header {
         min-height: 60vh;
@@ -202,6 +232,7 @@
         font-size: 2rem;
       }
     }
+    /* استعلام وسائط للشاشات بعرض أقصى 640 بكسل */
     @media (max-width: 640px) {
       header {
         min-height: 50vh;
@@ -234,16 +265,23 @@
   </style>
 </head>
 <body>
+  <!-- قسم الرأس الرئيسي -->
   <header class="relative">
+    <!-- حاوية المحتوى داخل الرأس -->
     <div class="container mx-auto px-8 py-24">
+      <!-- عنوان رئيسي -->
       <h1 class="text-3xl md:text-5xl font-extrabold mb-8 animate-slide-in">زين تبوك للشقق المخدومة</h1>
+      <!-- فقرة وصفية -->
       <p class="text-lg md:text-2xl leading-relaxed max-w-4xl mx-auto animate-slide-in delay-200">
         تجربة إقامة استثنائية من الموقع المميز الى حسن الاستقبال وجودة الخدمات  ،صممت كل التفاصيل لضمان راحتك ورضاك التام .
       </p>
+      <!-- زر للانتقال إلى قسم الشقق -->
       <a href="#apartments" class="cta-button mt-6 inline-block">استكشف الوحدات</a>
     </div>
   </header>
+  <!-- قسم المحتوى الرئيسي -->
   <main class="container mx-auto px-8 py-16" id="apartments">
+    <!-- قسم حول زين تبوك -->
     <section class="mb-20 animate-slide-in">
       <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-8 text-center">عن زين تبوك للشقق المخدومة</h2>
       <p class="text-gray-700 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
@@ -251,6 +289,7 @@
         يوجد مواقف خاصة ونوفر العديد من الخدمات المجانية لضيوفنا. حجز فوري ومؤكد
       </p>
     </section>
+    <!-- قسم جدول الشقق -->
     <section class="table-container animate-slide-in">
       <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-10 text-center">وحداتنا السكنية</h2>
       <table class="w-full">
@@ -297,6 +336,7 @@
       </table>
     </section>
   </main>
+  <!-- طبقة تغطية لمعرض الصور -->
   <div class="overlay" id="overlay" role="dialog" aria-label="معرض الصور" onclick="closeOverlay(event)">
     <div class="overlay-content" onclick="event.stopPropagation()">
       <span class="close-btn" onclick="closeOverlay()" role="button" aria-label="إغلاق المعرض">×</span>
@@ -308,6 +348,7 @@
       </div>
     </div>
   </div>
+  <!-- قسم الخريطة -->
   <section class="py-20 bg-blue-50">
     <div class="container mx-auto px-8">
       <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-10 text-center animate-slide-in">موقعنا على الخريطة</h2>
@@ -326,7 +367,9 @@
       </div>
     </div>
   </section>
+  <!-- تذييل الصفحة مع معلومات الاتصال -->
   <footer class="fixed bottom-8 right-8 flex flex-col items-end space-y-5 z-50">
+    <!-- رابط واتساب -->
     <a href="https://wa.me/966500155188" target="_blank" aria-label="تواصل عبر واتساب"
        class="bg-green-600 hover:bg-green-800 text-white rounded-full shadow-2xl px-8 py-4 flex items-center gap-4 transition duration-400 text-xl font-bold">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 448 512">
@@ -334,6 +377,7 @@
       </svg>
       واتساب
     </a>
+    <!-- رابط اتصال هاتفي -->
     <a href="tel:0500155188" aria-label="اتصل بنا"
        class="bg-blue-600 hover:bg-blue-800 text-white rounded-full shadow-2xl px-8 py-4 flex items-center gap-4 transition duration-400 text-xl font-bold">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 512 512">
@@ -342,7 +386,9 @@
       اتصال
     </a>
   </footer>
+  <!-- نصوص جافا سكريبت لمعرض الصور -->
   <script>
+    // بيانات معرض الصور
     const galleries = {
       "studio-small": ["images/studio-small1.jpg", "images/studio-small2.jpg", "images/studio-small3.jpg", "images/studio-small4.jpg"],
       "studio-large": ["images/studio-large1.jpg", "images/studio-large2.jpg", "images/studio-large3.jpg", "images/studio-large4.jpg"],
@@ -350,8 +396,10 @@
       "one-bedroom-living": ["images/one-living1.jpg", "images/one-living2.jpg", "images/one-living3.jpg", "images/one-living4.jpg"],
       "two-bedroom-living": ["images/two-living1.jpg", "images/two-living2.jpg", "images/two-living3.jpg", "images/two-living4.jpg", "images/two-living5.jpg"]
     };
+    // متغيرات لتتبع معرض الصور الحالي ومؤشر الصورة
     let currentGallery = [];
     let currentIndex = 0;
+    // دالة لعرض معرض الصور
     function showGallery(id) {
       const gallery = document.getElementById('overlay-gallery');
       const largeView = document.getElementById('largeView');
@@ -374,6 +422,7 @@
       document.getElementById('overlay').style.display = 'flex';
       document.getElementById('overlay').focus();
     }
+    // دالة لعرض الصورة الكبيرة
     function showLargeImage() {
       const largeImage = document.getElementById('largeImage');
       largeImage.src = currentGallery[currentIndex];
@@ -382,18 +431,22 @@
       largeImage.style.opacity = '0';
       setTimeout(() => { largeImage.style.opacity = '1'; }, 100);
     }
+    // دالة لعرض الصورة التالية
     function nextImage() {
       currentIndex = (currentIndex + 1) % currentGallery.length;
       showLargeImage();
     }
+    // دالة لعرض الصورة السابقة
     function prevImage() {
       currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length;
       showLargeImage();
     }
+    // دالة لإغلاق الطبقة العلوية
     function closeOverlay(event) {
       if (event && event.target.id !== 'overlay') return;
       document.getElementById('overlay').style.display = 'none';
     }
+    // مستمع للأحداث للتنقل باستخدام لوحة المفاتيح
     document.addEventListener('keydown', (e) => {
       if (document.getElementById('overlay').style.display === 'flex') {
         if (e.key === 'ArrowRight') nextImage();
@@ -401,6 +454,7 @@
         if (e.key === 'Escape') closeOverlay();
       }
     });
+    // مستمع للأحداث للتنقل باستخدام شاشة اللمس
     let touchStartX = 0;
     let touchEndX = 0;
     document.getElementById('largeView').addEventListener('touchstart', (e) => {
