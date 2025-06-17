@@ -267,6 +267,7 @@
 <body>
   <!-- قسم الرأس الرئيسي -->
   <header class="relative">
+    
     <!-- حاوية المحتوى داخل الرأس -->
     <div class="container mx-auto px-8 py-24">
       <!-- عنوان رئيسي -->
@@ -286,12 +287,26 @@
       <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-8 text-center">عن زين تبوك للشقق المخدومة</h2>
       <p class="text-gray-700 text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
         زين تبوك شقق مخدومة وحدات سكنية متنوعة بأسعار منافسة، تقع في حي القادسية بالقرب من مراكز التسوق والبوليفارد وبالقرب من الجامعة والمستشفى المركزي.
-        يوجد مواقف خاصة ونوفر العديد من الخدمات المجانية لضيوفنا. حجز فوري ومؤكد
+        يوجد مواقف خاصة ونوفر العديد من <span id="free-services" style="color: #1e40af; cursor: pointer; border-bottom: 2px solid #888;">الخدمات المجانية</span> لضيوفنا. حجز فوري ومؤكد
       </p>
+      <div id="free-services-img-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:3000;">
+        <img src="images/Free khadamati.jpg" alt="الخدمات المجانية" style="max-width:90vw; max-height:80vh; border-radius:1rem; box-shadow:0 8px 32px #000; background:#fff; padding:1rem;" onclick="event.stopPropagation()">
+      </div>
+      <script>
+        document.getElementById('free-services').onclick = function() {
+          document.getElementById('free-services-img-modal').style.display = 'flex';
+        };
+        document.getElementById('free-services-img-modal').onclick = function() {
+          this.style.display = 'none';
+        };
+      </script>
     </section>
     <!-- قسم جدول الشقق -->
     <section class="table-container animate-slide-in">
       <h2 class="text-4xl md:text-5xl font-bold text-blue-800 mb-10 text-center">وحداتنا السكنية</h2>
+      <div class="text-center text-sm text-blue-900 bg-blue-100 rounded-lg py-2 px-4 mb-4 md:hidden" style="font-weight:600;">
+        لمشاهدة الجدول بشكل أفضل لمستخدم الجوال يرجى قلب الشاشة أفقياً
+      </div>
       <table class="w-full">
         <thead>
           <tr>
